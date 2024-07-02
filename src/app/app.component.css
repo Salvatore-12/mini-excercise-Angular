@@ -1,0 +1,89 @@
+section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
+  .personeOnline{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .cerchioVerde{
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+    margin: 3px;
+  }
+  .cerchioRosso{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    margin: 3px;
+  }
+
+  .cerchio{
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    border-radius: 50%; 
+    margin-right: 10px;
+    text-align: center;
+  }
+  li{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  li > p{
+    margin-bottom: 0;
+  }
+
+  .cerchioOnline{
+    background-color: green;
+    color: white;
+  }
+  .prova{
+    border-radius: 0%;
+  }
+  .cerchioOffline{
+    background-color: red;
+    color: orange;
+  }
+  
+
+ 
+
+
+
+
+
+  
