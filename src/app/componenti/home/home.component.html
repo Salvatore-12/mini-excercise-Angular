@@ -1,1 +1,24 @@
-<p>home works!</p>
+<form [formGroup]="homeform" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput type="text" name="nome" formControlName="nome">
+  </mat-form-field>
+  <p *ngIf="homeform?.get('nome')?.touched && homeform?.get('nome')?.invalid">Inserisci il nome</p>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput type="email" name="email" formControlName="email">
+  </mat-form-field> 
+  <p *ngIf="homeform?.get('email')?.touched && homeform?.get('email')?.invalid">Inserisci l'email </p> 
+  <mat-form-field>
+    <mat-label>Colore</mat-label>
+    <mat-select name="colore" formControlName="colore">
+      <mat-option value="white">Bianco</mat-option>
+      <mat-option value="black">Nero</mat-option>
+      <mat-option value="blue">Blu</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p *ngIf="homeform?.get('colore')?.touched && homeform?.get('colore')?.invalid">Seleziona un colore</p>
+  <button mat-flat-button color="primary" type="submit" [disabled]="!homeform.valid">Invia</button>
+</form>
+
+  

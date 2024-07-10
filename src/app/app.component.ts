@@ -12,6 +12,7 @@ import { ServizoProvaService } from './servizi/servizo-prova.service';
 import { HomeComponent } from "./componenti/home/home.component"; // import per il componente Contact
 import { ContattiComponent } from './componenti/contatti/contatti.component';
 import { ContattoComponent } from './componenti/contatto/contatto.component';
+import { interval, Observable } from 'rxjs';
 
 
 
@@ -31,8 +32,10 @@ export class AppComponent implements OnInit {
   
   constructor(private servizioApp: ServizoProvaService){}
 
-  ngOnInit(): void {
-    console.log("qui siamo dentro app.component", this.servizioApp.persone)
+  ngOnInit(): void { 
+    // interval(1000).subscribe(numero => {
+    //   console.log(numero)
+    // }) 
   }
 
 }
