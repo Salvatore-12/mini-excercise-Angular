@@ -19,7 +19,7 @@ export class AuthService {
   }
 
   signUp(body: {}){
-    this.http.post(this.url, body)
+    return this.http.post(this.url, body)
   }
 
 }
