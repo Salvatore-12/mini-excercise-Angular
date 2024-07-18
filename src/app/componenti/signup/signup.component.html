@@ -1,6 +1,7 @@
 <h1>Registrazione</h1>
 
 <form #homeform="ngForm" (ngSubmit)="onSubmit(homeform)">
+    <div style="display: flex; flex-direction: column; width: 200px;">
     <mat-form-field>
         <mat-label>Email</mat-label>
         <input matInput type="email" name="email" ngModel>
@@ -11,4 +12,6 @@
         <input matInput type="text" name="nome"  ngModel>
     </mat-form-field>  
     <button mat-flat-button color="primary" type="submit">Invia</button>
+</div>
   </form>
+
