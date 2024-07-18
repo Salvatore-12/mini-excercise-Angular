@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {  MatInputModule } from '@angular/material/input';
@@ -32,4 +32,7 @@ export class SignupComponent implements OnInit {
     console.log('Method not implemented.');
   }
 
+  onSubmit(form: NgForm){
+
+  }
 }
