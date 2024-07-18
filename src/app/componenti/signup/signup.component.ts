@@ -8,6 +8,7 @@ import {  MatInputModule } from '@angular/material/input';
 import {  MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { FirebaseService } from '../../servizi/firebase.service';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -26,7 +27,7 @@ import { FirebaseService } from '../../servizi/firebase.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(){}
+  constructor(private authService: AuthService){}
 
   ngOnInit(): void {
     console.log('Method not implemented.');
@@ -36,6 +37,7 @@ export class SignupComponent implements OnInit {
     const email = form.value.email
     const password = form.value.password
     console.log(email,password)
+    this.authService.signUp({email: email, password: password,returnSecureToken: true})
     form.reset()
   }
 }

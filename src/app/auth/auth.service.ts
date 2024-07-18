@@ -1,12 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+   url = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[AIzaSyDzAn5R8F-bn_uZ_Bl9rqMMHJwS9jLe894]"
    isLoggin = true
    isAdmin = true
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   isAuthenticated(){
     return this.isLoggin
@@ -15,4 +17,9 @@ export class AuthService {
   isRoleAdmin(){
     return this.isAdmin
   }
+
+  signUp(body: {}){
+    this.http.post(this.url, body)
+  }
+
 }
