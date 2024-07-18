@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-   url = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[AIzaSyDzAn5R8F-bn_uZ_Bl9rqMMHJwS9jLe894]"
+   url = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDzAn5R8F-bn_uZ_Bl9rqMMHJwS9jLe894"
    isLoggin = true
    isAdmin = true
   constructor(private http: HttpClient) { }
