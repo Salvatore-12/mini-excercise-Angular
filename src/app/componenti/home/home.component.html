@@ -20,5 +20,9 @@
   <p *ngIf="homeform?.get('colore')?.touched && homeform?.get('colore')?.invalid">Seleziona un colore</p>
   <button mat-flat-button color="primary" type="submit" [disabled]="!homeform.valid">Invia</button>
 </form>
+<div style="display: flex; margin-left: 20px; margin-right: 5px;">
+<button mat-flat-button color="primary" style="margin-top:10px; margin-right:10px;" (click)="onDeletePersona()">elimina utente</button>
+<button mat-flat-button color="primary" style="margin-top: 10px;" (click)="onPatchPersona()" >modifica utente</button>
+</div>
 
   

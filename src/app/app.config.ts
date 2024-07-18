@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ServizoProvaService } from './servizi/servizo-prova.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,6 +23,7 @@ export const appConfig: ApplicationConfig = {
       MatButtonModule,
       BrowserAnimationsModule
     ),
-    ServizoProvaService
+    ServizoProvaService,
+    provideHttpClient(withFetch())
   ]
 };
