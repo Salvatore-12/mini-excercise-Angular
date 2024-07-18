@@ -3,12 +3,12 @@
 <form #homeform="ngForm" (ngSubmit)="onSubmit(homeform)">
     <mat-form-field>
         <mat-label>Email</mat-label>
-        <input matInput type="email" name="email" formControlName="email">
+        <input matInput type="email" name="email" ngModel>
     </mat-form-field>
 
     <mat-form-field>
-        <mat-label>Nome</mat-label>
-        <input matInput type="text" name="nome" formControlName="nome">
+        <mat-label>Password</mat-label>
+        <input matInput type="text" name="nome"  ngModel>
     </mat-form-field>  
     <button mat-flat-button color="primary" type="submit">Invia</button>
   </form>
