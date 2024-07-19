@@ -5,11 +5,13 @@ import { ContattoComponent } from './componenti/contatto/contatto.component';
 import { NotfoundComponent } from './componenti/notfound/notfound.component';
 import { authGuard, authGuardChild } from './auth/auth.guard';
 import { SignupComponent } from './componenti/signup/signup.component';
+import { SigninComponent } from './componenti/signin/signin.component';
 
 
 export const routes: Routes = [
   { path:'', component: HomeComponent},
   { path:'signup', component: SignupComponent},
+  { path:'signin', component: SigninComponent},
   { path:'contatti', component: ContattiComponent, canActivate:[authGuard],canActivateChild:[authGuardChild], children:[  
     { path:':id', component: ContattoComponent},
   ]},
