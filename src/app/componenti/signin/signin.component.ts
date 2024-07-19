@@ -33,7 +33,7 @@ export class SigninComponent implements OnInit {
   onSubmit(form: NgForm){
     const email = form.value.email
     const password = form.value.password
-    this.authService.signUp({email: email, password: password,returnSecureToken: true}).subscribe(data =>{
+    this.authService.signIn(email,password).subscribe(data =>{
       console.log(data)
     })
     form.reset()
