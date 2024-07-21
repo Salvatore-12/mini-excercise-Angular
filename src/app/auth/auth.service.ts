@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   createUser(email:string, id: string, token: string, expirationDate: Date){
-   return this.user = new User(email,id,token,expirationDate)
+    this.user = new User(email,id,token,expirationDate)
   }
 
   signUp(body: {}){
