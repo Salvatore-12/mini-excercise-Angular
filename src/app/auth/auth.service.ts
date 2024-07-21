@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from '../modelli/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ export class AuthService {
    signInURL = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${this.Apikey}`
    isLoggin = true
    isAdmin = true
+   user: User | undefined
+
   constructor(private http: HttpClient) { }
 
   isAuthenticated(){
@@ -18,6 +21,10 @@ export class AuthService {
 
   isRoleAdmin(){
     return this.isAdmin
+  }
+
+  createUser(email:string, id: string, token: string, expirationDate: Date){
+   return this.user = new User(email,id,token,expirationDate)
   }
 
   signUp(body: {}){
