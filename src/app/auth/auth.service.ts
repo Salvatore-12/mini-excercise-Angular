@@ -11,7 +11,7 @@ export class AuthService {
    signInURL = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${this.Apikey}`
    isLoggin = true
    isAdmin = true
-   user: User | undefined
+   user!: User;
 
   constructor(private http: HttpClient) { }
 

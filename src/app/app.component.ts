@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core'; // questo è il fulcro di angular
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core'; // questo è il fulcro di angular
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';// importare il CommonModule perchè nel ultima,versione di angular non c'è importato in modo automatico 
+import { CommonModule, isPlatformBrowser } from '@angular/common';// importare il CommonModule perchè nel ultima,versione di angular non c'è importato in modo automatico 
 import { ProvaComponent } from './prova/prova.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
@@ -11,6 +11,7 @@ import { ServizoProvaService } from './servizi/servizo-prova.service';
 import { HomeComponent } from "./componenti/home/home.component"; // import per il componente Contact
 import { ContattiComponent } from './componenti/contatti/contatti.component';
 import { ContattoComponent } from './componenti/contatto/contatto.component';
+import { AuthService } from './auth/auth.service';
 
 
 
@@ -28,10 +29,19 @@ export class AppComponent implements OnInit {
 
   title = 'corso-angular'
   
-  constructor(private servizioApp: ServizoProvaService){}
+  constructor(private servizioApp: ServizoProvaService, 
+              private authService: AuthService,
+              @Inject(PLATFORM_ID) private platformId: Object){}
+  
 
   ngOnInit(): void { 
-   
+    if (isPlatformBrowser(this.platformId)) {
+      const userString = localStorage.getItem('user');
+      if (userString) {
+        const user = JSON.parse(userString);
+        this.authService.createUser(user.email, user.id, user._token, user._expirationDate);
+      }
+    }
   }
 
 }
