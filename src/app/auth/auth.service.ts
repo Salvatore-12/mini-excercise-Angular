@@ -11,7 +11,7 @@ export class AuthService {
    signInURL = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${this.Apikey}`
    isLoggin = true
    isAdmin = true
-   user!: User;
+   user: User | null = null;
 
   constructor(private http: HttpClient) { }
 
@@ -33,5 +33,12 @@ export class AuthService {
   
   signIn(email: string, password: string){
     return this.http.post(this.signInURL,{email: email, password: password, returnSecureToken: true})
+  }
+
+  logout(){
+    this.isLoggin = false
+    this.user = null
+    localStorage.removeItem('user')
+
   }
 }
