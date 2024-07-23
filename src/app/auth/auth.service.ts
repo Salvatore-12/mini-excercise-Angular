@@ -7,7 +7,7 @@ import { User } from '../modelli/user.model';
 })
 export class AuthService {
   Apikey ='AIzaSyDzAn5R8F-bn_uZ_Bl9rqMMHJwS9jLe894'
-   url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${this.Apikey}`
+   signUpURL = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${this.Apikey}`
    signInURL = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${this.Apikey}`
    isLoggin = true
    isAdmin = true
@@ -27,8 +27,8 @@ export class AuthService {
     this.user = new User(email,id,token,expirationDate)
   }
 
-  signUp(body: {}){
-    return this.http.post(this.url, body)
+  signUp(email: string, password: string){
+    return this.http.post(this.signUpURL, {email: email, password: password, returnSecureToken: true})
   }
   
   signIn(email: string, password: string){
