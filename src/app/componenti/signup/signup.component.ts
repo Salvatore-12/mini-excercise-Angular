@@ -23,7 +23,7 @@ import { AuthService } from '../../auth/auth.service';
             MatButtonModule,
             HttpClientModule],
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.css'
+  styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
 
@@ -36,7 +36,7 @@ export class SignupComponent implements OnInit {
   onSubmit(form: NgForm){
     const email = form.value.email
     const password = form.value.password
-    this.authService.signUp({email: email, password: password,returnSecureToken: true}).subscribe(data =>{
+    this.authService.signUp(email, password).subscribe(data =>{
       console.log(data)
     })
     form.reset()
